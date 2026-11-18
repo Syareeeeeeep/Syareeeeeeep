@@ -1,0 +1,586 @@
+/* --- 1. Variabel Warna & Pengaturan Global --- */
+:root {
+    --primary-color: #2563EB;
+    --primary-light: #93C5FD;
+    --dark-color: #0F172A;
+    --bg-light: #F8FAFC;
+    --text-color: #334155;
+    --white-color: #FFFFFF;
+}
+
+/* Gulir halus saat menu diklik */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Jarak agar judul tidak tertutup menu */
+}
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    line-height: 1.6;
+}
+
+/* --- 2. Layout & Pembungkus (Container) --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Jarak antar bagian halaman */
+.section {
+    padding: 80px 0;
+}
+
+/* Warna latar selang-seling */
+.bg-white {
+    background-color: var(--white-color);
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* --- 3. Tipografi & Elemen Dasar --- */
+h2 {
+    color: var(--dark-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. Aksesibilitas Keyboard --- */
+a:focus-visible, 
+button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* --- 5. Navigasi --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+
+.logo-dot {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 6. Bagian Home --- */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: calc(100vh - 70px);
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-greeting {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.home-profession {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.home-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Tombol Dasar */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid var(--dark-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+/* Foto Profil */
+.home-image-wrapper {
+    flex-shrink: 0;
+}
+
+.home-image {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--primary-light);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+/* --- 7. Bagian Header Universal --- */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: -0.5rem;
+}
+
+/* --- 8. Bagian About --- */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-content strong {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* --- 9. Bagian Skills --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.skill-card {
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.skill-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- 10. Bagian Projects --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.project-card {
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-image-wrapper {
+    width: 100%;
+    height: 220px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-body {
+    padding: 24px;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-tag {
+    background-color: var(--primary-light);
+    color: var(--dark-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+
+/* --- 11. Bagian Contact --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.contact-card {
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 32px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1);
+}
+
+.contact-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(147, 197, 253, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-wrapper {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.contact-emoji {
+    font-size: 1.5rem;
+}
+
+.contact-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.25rem;
+}
+
+.contact-detail {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.contact-action {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: auto;
+}
+
+/* Kotak Ketersediaan */
+.availability-box {
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.availability-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.status-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.availability-desc {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* --- 12. Penutup Halaman (Footer) --- */
+#footer {
+    background-color: var(--dark-color);
+    color: var(--primary-light);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.footer-tech {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* --- 13. Tampilan Responsif (Media Queries) --- */
+
+/* Layar Sedang (Maksimal 992 piksel) */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet & Ponsel Besar (Maksimal 768 piksel) */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 130px; /* Menyesuaikan tinggi navbar 2 baris */
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    #navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-container {
+        flex-direction: column-reverse; /* Foto pindah ke atas */
+        text-align: center;
+        min-height: auto;
+        gap: 30px;
+    }
+
+    .home-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+
+    .home-title {
+        font-size: 2.2rem;
+    }
+
+    .home-image {
+        width: 240px;
+        height: 240px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ponsel Kecil (Maksimal 480 piksel) */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-buttons .btn {
+        width: 100%;
+    }
+
+    .availability-box {
+        padding: 20px;
+    }
+}
